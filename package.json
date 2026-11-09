@@ -1,0 +1,12 @@
+{
+  "name": "nutricheck-part2",
+  "version": "1.0.0",
+  "description": "NutriCheck - WEB700 Project Part 2: Express backend for grocery nutrition data",
+  "main": "server.js",
+  "scripts": {
+    "prepare-data": "node scripts/prepare-data.js",
+    "start": "node server.js"
+  },
+  "author": "Team NutriCheck - Emmanuel Okonkwo, Obioma Fortune",
+  "license": "ISC"
+}
