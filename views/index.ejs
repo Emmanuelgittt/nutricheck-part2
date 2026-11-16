@@ -1,0 +1,17 @@
+<%- include("header", { title: "Home" }) %>
+<h1>NutriCheck</h1>
+<p>Compare grocery products by their Nutri-Score (A to E), calories and sugar.</p>
+<p>Our dataset has <strong><%= total %></strong> products from <a href="https://world.openfoodfacts.org" target="_blank">Open Food Facts</a>, cleaned into a local JSON file.</p>
+<h2>Pages</h2>
+<ul>
+    <li><a href="/products">/products</a> – all products as cards, with food group and Nutri-Score filters</li>
+    <li><a href="/search">/search</a> – search form</li>
+</ul>
+<h2>JSON routes</h2>
+<ul>
+    <li><a href="/api/products">/api/products</a> – all products</li>
+    <li><a href="/api/products/nc-001">/api/products/nc-001</a> – one product by id</li>
+    <li><a href="/api/search?keyword=quaker">/api/search?keyword=quaker</a> – search by keyword</li>
+    <li><a href="/api/products?grade=a">/api/products?grade=a</a> – filter by Nutri-Score (also &amp;group=)</li>
+</ul>
+<%- include("footer") %>

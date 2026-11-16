@@ -8,5 +8,9 @@
     "start": "node server.js"
   },
   "author": "Team NutriCheck - Emmanuel Okonkwo, Obioma Fortune",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "ejs": "^3.1.10"
+  }
 }

@@ -1,0 +1,20 @@
+<%- include("header", { title: "Search" }) %>
+<h1>Search Products</h1>
+<form action="/search" method="POST" class="search">
+    <input type="text" name="keyword" value="<%= keyword %>" placeholder="Product name or brand, e.g. Quaker">
+    <button type="submit">Search</button>
+</form>
+
+<% if (error) { %>
+    <p class="error"><%= error %></p>
+<% } else if (searched && results.length === 0) { %>
+    <p class="error">No products found for "<%= keyword %>".</p>
+<% } else if (searched) { %>
+    <p><%= results.length %> product(s) found for "<%= keyword %>"</p>
+    <div class="grid">
+        <% results.forEach((p) => { %>
+            <%- include("card", { p }) %>
+        <% }) %>
+    </div>
+<% } %>
+<%- include("footer") %>

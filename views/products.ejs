@@ -1,0 +1,37 @@
+<%- include("header", { title: "Products" }) %>
+<h1>All Products</h1>
+
+<!-- Filters use GET, so the choices show up in the URL as a query string -->
+<form action="/products" method="GET" class="filters">
+    <label>Food group
+        <select name="group">
+            <option value="">All food groups</option>
+            <% foodGroups.forEach((g) => { %>
+                <option value="<%= g %>" <%= g === group ? "selected" : "" %>><%= g %></option>
+            <% }) %>
+        </select>
+    </label>
+    <label>Nutri-Score
+        <select name="grade">
+            <option value="">All grades</option>
+            <% ["a", "b", "c", "d", "e"].forEach((g) => { %>
+                <option value="<%= g %>" <%= g === grade ? "selected" : "" %>><%= g.toUpperCase() %></option>
+            <% }) %>
+        </select>
+    </label>
+    <button type="submit">Filter</button>
+    <a href="/products">Reset</a>
+</form>
+
+<p>Showing <strong><%= products.length %></strong> of <%= total %> products</p>
+
+<% if (products.length === 0) { %>
+    <p class="error">No products match these filters.</p>
+<% } else { %>
+    <div class="grid">
+        <% products.forEach((p) => { %>
+            <%- include("card", { p }) %>
+        <% }) %>
+    </div>
+<% } %>
+<%- include("footer") %>

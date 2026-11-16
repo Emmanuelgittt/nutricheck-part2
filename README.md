@@ -27,20 +27,27 @@ node scripts/prepare-data.js
 | Route | Output | Purpose |
 |---|---|---|
 | `GET /` | HTML | Home page with project name, description and links |
-| `GET /api/products` | JSON | All products |
-| `GET /api/products/:id` | JSON | One product by id (404 message if not found) |
+| `GET /api/products` | JSON | All products. Optional filters: `?grade=a` and/or `?group=Beverages` |
+| `GET /api/products/:id` | JSON | One product by id, e.g. `/api/products/nc-001` (404 message if not found) |
 | `GET /api/search?keyword=value` | JSON | Search by product name or brand |
-| `GET /products` | HTML/EJS | Products shown as cards |
+| `GET /products` | HTML/EJS | Products shown as cards, with food group and Nutri-Score filters |
 | `GET /search` | HTML/EJS | Search form |
 | `POST /search` | HTML/EJS | Validates the keyword and shows results |
 
 ## How to run
 
-*(Coming soon – the Express server is being built.)*
+```
+npm install
+node server.js
+```
+
+Then open http://localhost:8080
 
 ## Project status
 
 - [x] Dataset selected and cleaned
-- [ ] Express server and JSON routes
-- [ ] EJS pages and search form
-- [ ] Validation and testing
+- [x] Express server and JSON routes
+- [x] EJS pages and search form (first version)
+- [x] Basic validation (empty keyword, no results, 404)
+- [x] Filter by food group / Nutri-Score
+- [ ] Final testing and screenshots

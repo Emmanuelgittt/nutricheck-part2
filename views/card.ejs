@@ -1,0 +1,9 @@
+<div class="card">
+    <img src="<%= p.imageSmall || '/placeholder.svg' %>" alt="<%= p.name %>" loading="lazy" onerror="this.src='/placeholder.svg'">
+    <h3><%= p.name %></h3>
+    <p class="brand"><%= p.brand || "Unknown brand" %></p>
+    <p><span class="grade grade-<%= p.nutriScore || 'none' %>"><%= p.nutriScore ? p.nutriScore.toUpperCase() : "?" %></span>
+       <%= p.foodGroup || "Food group not available" %></p>
+    <p><%= p.nutrition.calories ?? "–" %> kcal &middot; <%= p.nutrition.sugars ?? "–" %> g sugar <small>(per 100 g)</small></p>
+    <a href="/api/products/<%= p.id %>">View JSON</a>
+</div>
