@@ -51,3 +51,8 @@ Then open http://localhost:8080
 - [x] Basic validation (empty keyword, no results, 404)
 - [x] Filter by food group / Nutri-Score
 - [ ] Final testing and screenshots
+
+## Team roles
+
+- **Emmanuel Okonkwo** – dataset cleaning script, Express server, JSON API routes, GitHub setup
+- **Obioma Fortune** – EJS pages, search form, validation testing, screenshots, Trello board
